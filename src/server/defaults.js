@@ -24,6 +24,8 @@ module.exports = function (opts) {
   // Enable CORS for all the requests, including static files
   if (!opts.noCors) {
     arr.push(cors({ origin: true, credentials: true }))
+  } else {
+    arr.push(cors({ origin: '*' }))
   }
 
   if (process.env.NODE_ENV === 'development') {
